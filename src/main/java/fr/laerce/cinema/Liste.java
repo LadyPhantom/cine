@@ -31,43 +31,14 @@ public class Liste extends HttpServlet {
         bw.write("<p>Classement par ordre alphanum:</p>");
         for (Film f : fd.lesFilms){
             bw.write("<li>");
-            bw.write("<a href=\"/affiche?id=" + f.id + "\">"
+            bw.write("<a href=\"/detail?id=" + f.id + "\">"
                     + f.titre +
                     "</a>");
             bw.write("</li>");
         }
 
-
         bw.write("<p>Classement par note décroissante:</p>");
 
-
-//        bw.write("<LI>");
-//        bw.write("Le juge et l'assassin");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("La guerre des étoiles");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("Pretty woman");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("Légendes d'automne");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("E.T. l'extra-terrestre");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("BEN-HUR");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("La jurée");
-//        bw.write("</LI>");
 
         bw.write("</ul></body></html>");
         bw.newLine();
