@@ -26,7 +26,14 @@ public class Liste extends HttpServlet {
         bw.write("<ul>");
 
         FilmsDonnees fd = new FilmsDonnees();
-        Collections.sort(fd.lesFilms, new FilmComparator());
+
+        String sort = request.getParameter("sort");
+        if (sort == null) {
+            Collections.sort(fd.lesFilms, new FilmComparator());
+        }else if ("note".equals(sort)) {
+            Collections.sort(fd.lesFilms, (o1, o2) -> Double.compare(o1.note, o2.note));
+        }
+
 
         bw.write("<p>Classement par ordre alphanum:</p>");
         for (Film f : fd.lesFilms){
@@ -39,6 +46,20 @@ public class Liste extends HttpServlet {
 
         bw.write("<p>Classement par note décroissante:</p>");
 
+
+
+//        String sort = request.getParameter("sort");
+//        if (sort == null) {
+//            Collections.sort(fd.lesFilms, new FilmComparator());
+//        }else if ("note".equals(sort)) {
+//            Collections.sort(fd.lesFilms, new Comparator<Film>() {
+//                @Override
+//                public int compare(Film o1, Film o2) {
+//                    return Double.compare(o1.note, o2.note);
+//                }
+//            });
+//        }
+//
 
         bw.write("</ul></body></html>");
         bw.newLine();
