@@ -8,13 +8,13 @@
 
 <a href="liste">liste</a>
 <br>
-<a href="liste?sort=note">liste sort=note</a>
+<a href="liste?sort=note">liste notes croissantes</a>
 <br>
-<%--<a href="liste?sort=notedesc">liste</a>--%>
+<%--<a href="liste?sort=notedesc">liste notes décroissantes</a>--%>
 <br>
-<a href="detail?id=2">détail</a>
+<a href="detail?id=2">détail n°2</a>
 <br>
-<a href="affiche?id=5">affiche</a>
+<a href="affiche?id=5">affiche n°5</a>
 
 </body>
 </html>
