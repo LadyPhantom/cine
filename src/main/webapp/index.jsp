@@ -5,10 +5,7 @@
 <body>
 <h2>Le cinema de Tomcat</h2>
 
-<form action="liste" method="get">
-    <button type="submit" name=validez">Validez votre recherche</button>
-</div>
-</form>
+<a href="liste">liste</a>
 
 </body>
 </html>

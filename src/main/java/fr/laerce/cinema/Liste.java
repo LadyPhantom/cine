@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.Collections;
 
 public class Liste extends HttpServlet {
 
@@ -19,17 +20,42 @@ public class Liste extends HttpServlet {
         bw.write("<HTML><BODY>");
         bw.write("<UL>");
 
-        bw.write("<LI>");
-        bw.write("a");
-        bw.write("</LI>");
+        FilmsDonnees fd = new FilmsDonnees();
+        Collections.sort(fd.lesFilms, new FilmComparator());
 
-        bw.write("<LI>");
-        bw.write("b");
-        bw.write("</LI>");
+        for (Film f : fd.lesFilms){
+            bw.write("<LI>");
+            bw.write(f.titre);
+            bw.write("</LI>");
+        }
 
-        bw.write("<LI>");
-        bw.write("c");
-        bw.write("</LI>");
+//        bw.write("<LI>");
+//        bw.write("Le juge et l'assassin");
+//        bw.write("</LI>");
+//
+//        bw.write("<LI>");
+//        bw.write("La guerre des étoiles");
+//        bw.write("</LI>");
+//
+//        bw.write("<LI>");
+//        bw.write("Pretty woman");
+//        bw.write("</LI>");
+//
+//        bw.write("<LI>");
+//        bw.write("Légendes d'automne");
+//        bw.write("</LI>");
+//
+//        bw.write("<LI>");
+//        bw.write("E.T. l'extra-terrestre");
+//        bw.write("</LI>");
+//
+//        bw.write("<LI>");
+//        bw.write("BEN-HUR");
+//        bw.write("</LI>");
+//
+//        bw.write("<LI>");
+//        bw.write("La jurée");
+//        bw.write("</LI>");
 
         bw.write("</UL></BODY></HTML>");
         bw.newLine();
