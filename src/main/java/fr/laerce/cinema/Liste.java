@@ -39,7 +39,7 @@ public class Liste extends HttpServlet {
         for (Film f : fd.lesFilms){
             bw.write("<li>");
             bw.write("<a href=\"/detail?id=" + f.id + "\">"
-                    + f.titre +
+                    + f.titre + " (" + f.note + ")" +
                     "</a>");
             bw.write("</li>");
         }

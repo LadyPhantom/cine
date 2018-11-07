@@ -30,11 +30,11 @@ public class Detail extends HttpServlet {
 
         bw.write("<li>Titre: " + film.titre + "</li>");
 
-        bw.write("<li>Affiche:");
+        bw.write("<li>");
         bw.write("<a href=\"/affiche?id=" + id + "\">" +
                             "<img src=\"/affiche?id=" + id + "\"" +
-                            " width=\"200\" " +
-                            "height=\"100\" >" +
+                           // "width=\"50%\" " +
+                            "height=\"50%\" >" +
                       "</a>");
         bw.write("</li>");
 
