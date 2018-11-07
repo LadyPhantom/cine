@@ -1,15 +1,14 @@
 package fr.laerce.cinema;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.util.Collections;
-import java.util.Comparator;
 
-public class Liste extends HttpServlet {
+public class Detail extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -38,41 +37,11 @@ public class Liste extends HttpServlet {
         }
 
 
-        bw.write("<p>Classement par note décroissante:</p>");
-
-
-//        bw.write("<LI>");
-//        bw.write("Le juge et l'assassin");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("La guerre des étoiles");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("Pretty woman");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("Légendes d'automne");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("E.T. l'extra-terrestre");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("BEN-HUR");
-//        bw.write("</LI>");
-//
-//        bw.write("<LI>");
-//        bw.write("La jurée");
-//        bw.write("</LI>");
+        bw.write("<p>e:</p>");
 
         bw.write("</ul></body></html>");
         bw.newLine();
         bw.flush();
 
     }
-
 }
