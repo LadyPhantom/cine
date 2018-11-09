@@ -54,7 +54,7 @@ public class Detail extends HttpServlet {
 
         bw.write("<li>Note: " + film.note +"</li>");
 
-        bw.write("</ul><<br><br><a href=\"/historique\">Allez à l'historique</a>");
+        bw.write("</ul><br><br><a href=\"/historique\">Allez à l'historique</a>");
         bw.write("</body></html>");
         bw.newLine();
         bw.flush();
