@@ -16,6 +16,16 @@
         <servlet-name>detail</servlet-name>
         <servlet-class>fr.laerce.cinema.Detail</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>recherche</servlet-name>
+        <servlet-class>fr.laerce.cinema.RechercheFilmByNom</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>historique</servlet-name>
+        <servlet-class>fr.laerce.cinema.Historique</servlet-class>
+    </servlet>
+
+
 
     <servlet-mapping>
         <servlet-name>affiche</servlet-name>
@@ -28,5 +38,13 @@
     <servlet-mapping>
         <servlet-name>detail</servlet-name>
         <url-pattern>/detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>recherche</servlet-name>
+        <url-pattern>/recherche</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>historique</servlet-name>
+        <url-pattern>/historique</url-pattern>
     </servlet-mapping>
 </web-app>

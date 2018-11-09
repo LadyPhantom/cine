@@ -17,17 +17,21 @@ public class Liste extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        // Initialisations ----------------------------------------------
         BufferedWriter bw = new BufferedWriter(response.getWriter());
         bw.write("<html>" +
                 "<head>" +
                 "<title>Liste</title>" +
                 "</head>" +
                 "<body>");
+
+        bw.write("<a href=\"/\">Index</a><br><br>");
+
         bw.write("<ul>");
 
         FilmsDonnees fd = new FilmsDonnees();
 
-        //----Tri des films---------------------
+        //----Tri des films-----------------------------------------------
         String sort = request.getParameter("sort");
         if (sort == null) {
             Collections.sort(fd.lesFilms, new FilmComparator());
@@ -35,7 +39,7 @@ public class Liste extends HttpServlet {
             Collections.sort(fd.lesFilms, (o1, o2) -> Double.compare(o1.note, o2.note));
         }
 
-        //----Afficher films--------------------
+        //----Afficher films-----------------------------------------------
         for (Film f : fd.lesFilms){
             bw.write("<li>");
             bw.write("<a href=\"/detail?id=" + f.id + "\">"
@@ -57,6 +61,7 @@ public class Liste extends HttpServlet {
 //            });
 //        }
 
+        bw.write("<br><br><a href=\"/historique\">Allez à l'historique</a>");
         bw.write("</ul></body></html>");
         bw.newLine();
         bw.flush();
