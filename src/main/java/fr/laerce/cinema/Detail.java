@@ -54,12 +54,14 @@ public class Detail extends HttpServlet {
 
         bw.write("<li>Note: " + film.note +"</li>");
 
-        bw.write("<br><br><a href=\"/historique\">Allez à l'historique</a>");
-        bw.write("</ul></body></html>");
+        bw.write("</ul><<br><br><a href=\"/historique\">Allez à l'historique</a>");
+        bw.write("</body></html>");
         bw.newLine();
         bw.flush();
 
-        listeFilmUser.add(id);
+        if (!listeFilmUser.contains(id)){
+            listeFilmUser.add(id);
+        }
 
     }
 }

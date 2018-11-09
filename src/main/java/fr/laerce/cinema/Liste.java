@@ -61,8 +61,8 @@ public class Liste extends HttpServlet {
 //            });
 //        }
 
-        bw.write("<br><br><a href=\"/historique\">Allez à l'historique</a>");
-        bw.write("</ul></body></html>");
+        bw.write("</ul><<br><br><a href=\"/historique\">Allez à l'historique</a>");
+        bw.write("/body></html>");
         bw.newLine();
         bw.flush();
 

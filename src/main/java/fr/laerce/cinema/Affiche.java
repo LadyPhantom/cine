@@ -27,8 +27,11 @@ public class Affiche extends HttpServlet {
         Film film = fd.getById(id);
 
         ServletContext cntx= getServletContext();
-        // Chemin absolu de l'image
-        String filename = cntx.getRealPath("WEB-INF/datas/affiches/"+film.afficheNom);
+//        // Chemin absolu de l'image
+//        String filename = cntx.getRealPath("WEB-INF/datas/affiches/"+film.afficheNom);
+
+        String filename = cntx.getRealPath(  film.afficheNom );
+
         // Type mime associé à l'image d'après le nom de fichier
         String mime = cntx.getMimeType(filename);
         if (mime == null) {

@@ -42,7 +42,6 @@ public class Historique extends HttpServlet {
         bw.write("<ul>");
         for (Film f : fd.lesFilms){
             for (Integer fUser : listeFilmUser){
-                //boucle externe: boucle sur la liste de film pour afficher chq film 1 seul fois
                 if (fUser == f.id){
                     vu_empty = false;
                     bw.write("<li>" +

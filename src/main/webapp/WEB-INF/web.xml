@@ -47,4 +47,13 @@
         <servlet-name>historique</servlet-name>
         <url-pattern>/historique</url-pattern>
     </servlet-mapping>
+
+    <!-- Init parameters -->
+
+    <!--<context-param>-->
+        <!--<param-name>url</param-name>-->
+        <!--<param-value>dd</param-value>-->
+    <!--</context-param>-->
+
 </web-app>
+
