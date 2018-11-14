@@ -30,7 +30,10 @@
     <input type="submit"/>
 </form>
 
-
+<br>
+<a href="/historique">
+    Allez à l'historique
+</a>
 
 </body>
 </html>

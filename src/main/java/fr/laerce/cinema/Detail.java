@@ -28,10 +28,6 @@ public class Detail extends HttpServlet {
         Film film = fd.getById(id);
 //        BufferedWriter bw = new BufferedWriter(response.getWriter());
 
-        request.setAttribute("film", film);
-
-        String jspview = "detail.jsp";
-
         if(listeFilmUser == null){
             listeFilmUser = new ArrayList<Integer>();
             session.setAttribute("filmVu", listeFilmUser);
@@ -41,7 +37,10 @@ public class Detail extends HttpServlet {
         if (!listeFilmUser.contains(id)){
             listeFilmUser.add(id);
         }
-//
+
+        request.setAttribute("film", film);
+
+        String jspview = "detail.jsp";
 
         getServletConfig().getServletContext().getRequestDispatcher("/jsp/"+jspview).forward(request, response);
 

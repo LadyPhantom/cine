@@ -18,16 +18,16 @@ public class Liste extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // Initialisations ----------------------------------------------
-        BufferedWriter bw = new BufferedWriter(response.getWriter());
-        bw.write("<html>" +
-                "<head>" +
-                "<title>Liste</title>" +
-                "</head>" +
-                "<body>");
-
-        bw.write("<a href=\"/\">Index</a><br><br>");
-
-        bw.write("<ul>");
+//        BufferedWriter bw = new BufferedWriter(response.getWriter());
+//        bw.write("<html>" +
+//                "<head>" +
+//                "<title>Liste</title>" +
+//                "</head>" +
+//                "<body>");
+//
+//        bw.write("<a href=\"/\">Index</a><br><br>");
+//
+//        bw.write("<ul>");
 
         FilmsDonnees fd = new FilmsDonnees();
 
@@ -39,15 +39,22 @@ public class Liste extends HttpServlet {
             Collections.sort(fd.lesFilms, (o1, o2) -> Double.compare(o1.note, o2.note));
         }
 
-        //----Afficher films-----------------------------------------------
-        for (Film f : fd.lesFilms){
-            bw.write("<li>");
-            bw.write("<a href=\"/detail?id=" + f.id + "\">"
 
-                    + f.titre + " (" + f.note + ")" +
-                    "</a>");
-            bw.write("</li>");
-        }
+        request.setAttribute("films", fd.lesFilms);
+
+        String jspview = "liste.jsp";
+
+        getServletConfig().getServletContext().getRequestDispatcher("/jsp/"+jspview).forward(request, response);
+
+        //----Afficher films-----------------------------------------------
+//        for (Film f : fd.lesFilms){
+//            bw.write("<li>");
+//            bw.write("<a href=\"/detail?id=" + f.id + "\">"
+//
+//                    + f.titre + " (" + f.note + ")" +
+//                    "</a>");
+//            bw.write("</li>");
+//        }
 
         //--Tri alternatif, sans fonction lambda-----------
 //        String sort = request.getParameter("sort");
@@ -61,11 +68,11 @@ public class Liste extends HttpServlet {
 //                }
 //            });
 //        }
-
-        bw.write("</ul><br><br><a href=\"/historique\">Allez à l'historique</a>");
-        bw.write("</body></html>");
-        bw.newLine();
-        bw.flush();
+//
+//        bw.write("</ul><br><br><a href=\"/historique\">Allez à l'historique</a>");
+//        bw.write("</body></html>");
+//        bw.newLine();
+//        bw.flush();
 
     }
 

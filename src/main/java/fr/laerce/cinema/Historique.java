@@ -18,11 +18,9 @@ public class Historique extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // Initialisations ----------------------------------------------
         HttpSession session = request.getSession();
         List<Integer> listeFilmUser = (List<Integer>) session.getAttribute("filmVu");
         FilmsDonnees fd = new FilmsDonnees();
-        BufferedWriter bw = new BufferedWriter(response.getWriter());
         boolean vu_empty = true;
 
         if(listeFilmUser == null){
@@ -30,33 +28,22 @@ public class Historique extends HttpServlet {
             session.setAttribute("filmVu", listeFilmUser);
         }
 
-        bw.write("<html>" +
-                "<head>" +
-                "<title>Historique</title>" +
-                "</head>" +
-                "<body>");
-        // Index ---------------------------------------------------------
-        bw.write("<a href=\"/\">Index</a><br><br>");
-
-        // Affichage -----------------------------------------------------
-        bw.write("<ul>");
+        List<Film> filmsVu = new ArrayList<>();
         for (Film f : fd.lesFilms){
             for (Integer fUser : listeFilmUser){
                 if (fUser == f.id){
                     vu_empty = false;
-                    bw.write("<li>" +
-                            f.titre +
-                            "</li>");
+                    filmsVu.add(f);
                 }
             }
         }
 
-        if (vu_empty){
-            bw.write("<p>Vous n'avez vu aucun film.</p>");
-        }
-        bw.write("</ul></body></html>");
-        bw.newLine();
-        bw.flush();
+        request.setAttribute("films", filmsVu);
+        request.setAttribute("vuEmpty", vu_empty);
+
+        String jspview = "historique.jsp";
+
+        getServletConfig().getServletContext().getRequestDispatcher("/jsp/"+jspview).forward(request, response);
 
     }
 
