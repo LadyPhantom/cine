@@ -6,8 +6,28 @@ public class Film{
         this.afficheNom = afficheNom;
         this.note = note;
     }
+
+    public int getId() {
+        return id;
+    }
+
     int id;
+
+    public double getNote() {
+        return note;
+    }
+
+    public String getAfficheNom() {
+        return afficheNom;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
     String titre;
     String afficheNom;
     double note;
+
+
 }

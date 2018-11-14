@@ -33,7 +33,6 @@
         <servlet-name>historique</servlet-name>
         <servlet-class>fr.laerce.cinema.Historique</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>affiche</servlet-name>
         <url-pattern>/affiche</url-pattern>
