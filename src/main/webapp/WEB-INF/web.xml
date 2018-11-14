@@ -7,18 +7,15 @@
     <display-name>Archetype Created Web Application</display-name>
 
     <!-- Init parameters -->
-    <!--<context-param>-->
-        <!--<param-name>url</param-name>-->
-        <!--<param-value>dd</param-value>-->
-    <!--</context-param>-->
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>C:\\Users\\CDI\\Desktop\\affiches\\</param-value>
+    </context-param>
 
     <servlet>
         <servlet-name>affiche</servlet-name>
         <servlet-class>fr.laerce.cinema.Affiche</servlet-class>
-        <init-param>
-            <param-name>url</param-name>
-            <param-value>C:/Users/Public/Documents/affiches/</param-value>
-        </init-param>
+
     </servlet>
     <servlet>
         <servlet-name>liste</servlet-name>
