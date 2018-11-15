@@ -30,6 +30,8 @@
             </li>
         </c:forEach>
     </c:if>
+
+    <li>Aucun film correspondant trouvé.</li>
 </ul>
 <%----------------------------------------%>
 <br>
