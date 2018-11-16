@@ -4,7 +4,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,14 +30,11 @@ public class RechercheFilmByNom extends HttpServlet {
                 filmsVu.add(f);
             }
         }
-        if (aucun_resultat_obtenu){
-            bw.write("<li>Aucun film correspondant trouvé.</li>");
-        }
 
         request.setAttribute("films", filmsVu);
         request.setAttribute("aucunResultatObtenu", aucun_resultat_obtenu);
 
-        String jspview = "historique.jsp";
+        String jspview = "recherche.jsp";
 
         getServletConfig().getServletContext().getRequestDispatcher("/jsp/"+jspview).forward(request, response);
 

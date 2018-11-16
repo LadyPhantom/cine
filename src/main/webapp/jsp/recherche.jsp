@@ -31,7 +31,9 @@
         </c:forEach>
     </c:if>
 
-    <li>Aucun film correspondant trouvé.</li>
+    <c:if test="${aucunResultatObtenu}">
+        <li>Aucun film correspondant trouvé.</li>
+    </c:if>
 </ul>
 <%----------------------------------------%>
 <br>
